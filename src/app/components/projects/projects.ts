@@ -20,38 +20,33 @@ export class Projects {
   private readonly baseProjects: Project[] = [
     {
       id: 1,
-      image: '/finacontrolcover.webp',
-      title: 'FinaControl',
-      description: 'Aplicativo para gerenciamento de finanças pessoais, focado em organização, controle de gastos e visão clara da vida financeira.',
-      link: '#'
+      image: '/botcover.webp',
+      title: 'Albion Event Bot',
+      description:
+        'Bot para gerenciamento de eventos no Albion Online, presente em mais de 180 servidores do Discord.',
+      link: '#',
     },
     {
       id: 2,
-      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Projeto+2',
-      title: 'Dashboard Financeiro',
-      description: 'Painel administrativo para gestão financeira com gráficos interativos.',
-      link: '#'
+      image: '/sitecover.webp',
+      title: 'Albion Event Bot - SITE',
+      description: 'Website desenvolvido para apresentar o Albion Event Bot.',
+      link: '#',
     },
     {
       id: 3,
-      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Projeto+3',
-      title: 'Social Media Bot',
-      description: 'Automação para redes sociais com agendamento de postagens.',
-      link: '#'
+      image: '/finacontrolcover.webp',
+      title: 'FinaControl',
+      description:
+        'Aplicativo para gerenciamento de finanças pessoais, focado em organização, controle de gastos e visão clara da vida financeira.',
+      link: '#',
     },
-    {
-      id: 4,
-      image: 'https://placehold.co/600x400/1a1a1a/ffffff?text=Projeto+4',
-      title: 'Landing Page',
-      description: 'Página de alta conversão para lançamento de produtos digitais.',
-      link: '#'
-    }
   ];
 
   projects: Project[] = [
-    ...this.baseProjects.map(p => ({ ...p })),
-    ...this.baseProjects.map(p => ({ ...p })),
-    ...this.baseProjects.map(p => ({ ...p }))
+    ...this.baseProjects.map((p) => ({ ...p })),
+    ...this.baseProjects.map((p) => ({ ...p })),
+    ...this.baseProjects.map((p) => ({ ...p })),
   ];
 
   currentIndex = this.baseProjects.length;
