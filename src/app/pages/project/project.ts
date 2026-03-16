@@ -8,6 +8,8 @@ interface ProjectData {
   description: string;
   images: string[];
   techStack: { name: string; icon: string }[];
+  buttonName: string;
+  buttonImg: string
   githubLink: string;
 }
 
@@ -27,7 +29,7 @@ export class Project implements OnInit {
     {
       id: '1',
       title: 'Albion Event Bot',
-      description: `O Albion Event Bot é um bot para Discord desenvolvido para auxiliar guildas e jogadores do Albion Online na organização de eventos e no gerenciamento de recompensas. Trata-se de um produto em produção, utilizado por mais de 180 servidores, com foco em automação, precisão e escalabilidade.
+      description: `O Albion Event Bot é um bot para Discord desenvolvido para auxiliar guildas e jogadores do Albion Online na organização de eventos e no gerenciamento de recompensas. Trata-se de um produto em produção, utilizado por mais de 200 servidores, com foco em automação, precisão e escalabilidade.
 
       🎯 Objetivo do Projeto
       O objetivo do Albion Event Bot é simplificar a criação e o gerenciamento de eventos no Albion Online, especialmente em atividades que envolvem divisão de loot, controle de participação e organização financeira, reduzindo processos manuais e evitando erros.
@@ -59,10 +61,14 @@ export class Project implements OnInit {
         '/bot8.png'
       ],
       techStack: [
-        { name: 'Typescript', icon: 'https://placehold.co/48x48/indigo/white?text=A' },
-        { name: 'Supabase', icon: 'https://placehold.co/48x48/cyan/white?text=TW' },
+        { name: 'Typescript', icon: 'https://cdn.simpleicons.org/typescript' },
+        { name: 'Supabase', icon: 'https://cdn.simpleicons.org/supabase' },
+        { name: 'PostgreSQL', icon: 'https://cdn.simpleicons.org/postgresql' },
       ],
+
       githubLink: 'https://discord.gg/AjGZbc5b2s',
+      buttonName: "Acessar o Bot",
+      buttonImg: "https://cdn.simpleicons.org/discord"
     },
     {
       id: '2',
@@ -87,10 +93,12 @@ export class Project implements OnInit {
       </a>`,
       images: ['/sitebot1.png', '/sitebot2.png', '/sitebot3.png', '/sitebot4.png'],
       techStack: [
-        { name: 'Angular', icon: 'https://placehold.co/48x48/blue/white?text=R' },
-        { name: 'TypeScript', icon: 'https://placehold.co/48x48/blue/white?text=TS' },
+        { name: 'Next.js', icon: 'https://cdn.simpleicons.org/nextdotjs/white' },
+        { name: 'TypeScript', icon: 'https://cdn.simpleicons.org/typescript' },
       ],
       githubLink: 'https://github.com/marceloaraujo28/bot-site',
+      buttonName: "Ver no GitHub",
+      buttonImg: "https://cdn.simpleicons.org/github"
     },
     {
       id: '3',
@@ -128,12 +136,14 @@ export class Project implements OnInit {
         '/imgreadme7.png',
       ],
       techStack: [
-        { name: 'React Native', icon: 'https://placehold.co/48x48/indigo/white?text=A' },
-        { name: 'TypeScript', icon: 'https://placehold.co/48x48/green/white?text=Node' },
-        { name: 'Expo', icon: 'https://placehold.co/48x48/cyan/white?text=TW' },
-        { name: 'Supabase', icon: 'https://placehold.co/48x48/cyan/white?text=SP' },
+        { name: 'React Native', icon: 'https://cdn.simpleicons.org/react' },
+        { name: 'TypeScript', icon: 'https://cdn.simpleicons.org/typescript' },
+        { name: 'Expo', icon: 'https://cdn.simpleicons.org/expo' },
+        { name: 'Supabase', icon: 'https://cdn.simpleicons.org/supabase' },
       ],
       githubLink: 'https://github.com/marceloaraujo28/finance-app',
+      buttonName: "Ver no GitHub",
+      buttonImg: "https://cdn.simpleicons.org/github"
     },
   ];
 
@@ -143,7 +153,7 @@ export class Project implements OnInit {
     this.route.params.subscribe((params) => {
       const id = params['id'];
       this.project = this.projectsData.find((p) => p.id === id);
-      this.currentSlide = 0; // Reset slide on project change
+      this.currentSlide = 0;
     });
   }
 
