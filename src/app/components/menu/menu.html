@@ -1,18 +1,63 @@
 <header
     class="fixed top-0 left-0 z-50 w-full h-16 bg-slate-900/90 backdrop-blur-md border-b border-white/5 text-gray-400 transition-all duration-300">
+
     <div class="max-w-6xl mx-auto h-full flex items-center justify-between px-4">
+
+
         <div
-            class="text-lg  md:text-2xl font-bold text-indigo-400 italic hover:text-gray-200 duration-500 ease-out cursor-pointer">
-            <p><a href="/">
-                    < Marcelo Araújo />
-                </a></p>
+            class="text-lg md:text-2xl font-bold text-indigo-400 italic hover:text-gray-200 duration-500 ease-out cursor-pointer">
+            <a href="/">
+                &lt; Marcelo Araújo /&gt;
+            </a>
         </div>
-        <nav>
+
+
+        <nav class="hidden md:block">
             <ul class="flex flex-row gap-5">
-                <li class="hover:text-white duration-500 ease-out "><a href="#about">Sobre</a></li>
-                <li class="hover:text-white duration-500 ease-out "><a href="#projects">Projetos</a></li>
-                <li class="hover:text-white duration-500 ease-out "><a href="#experiences">Experiências</a></li>
+                <li class="hover:text-white duration-500"><a href="#about">Sobre</a></li>
+                <li class="hover:text-white duration-500"><a href="#projects">Projetos</a></li>
+                <li class="hover:text-white duration-500"><a href="#experiences">Experiências</a></li>
             </ul>
         </nav>
+
+
+        <button class="md:hidden flex flex-col gap-1" (click)="toggleMenu()">
+
+            <span class="w-6 h-[2px] bg-white"></span>
+            <span class="w-6 h-[2px] bg-white"></span>
+            <span class="w-6 h-[2px] bg-white"></span>
+
+        </button>
+
+    </div>
+
+    <div *ngIf="menuOpen"
+        class="md:hidden absolute top-16 left-0 w-full bg-slate-900/95 backdrop-blur-md border-t border-white/10 shadow-xl">
+
+        <ul class="flex flex-col gap-3 p-4">
+
+            <li>
+                <a (click)="toggleMenu()" href="#about"
+                    class="block w-full text-center py-3 rounded-lg border border-slate-700 hover:border-indigo-400 hover:text-white hover:bg-slate-800 transition-all duration-300">
+                    Sobre
+                </a>
+            </li>
+
+            <li>
+                <a (click)="toggleMenu()" href="#projects"
+                    class="block w-full text-center py-3 rounded-lg border border-slate-700 hover:border-indigo-400 hover:text-white hover:bg-slate-800 transition-all duration-300">
+                    Projetos
+                </a>
+            </li>
+
+            <li>
+                <a (click)="toggleMenu()" href="#experiences"
+                    class="block w-full text-center py-3 rounded-lg border border-slate-700 hover:border-indigo-400 hover:text-white hover:bg-slate-800 transition-all duration-300">
+                    Experiências
+                </a>
+            </li>
+
+        </ul>
+
     </div>
 </header>
