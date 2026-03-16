@@ -1,9 +1,9 @@
-<section class="min-h-[80vh] flex items-center justify-center p-6" id="about">
+<section class="pt-20 md:pt-0 md:min-h-[80vh] flex items-center justify-center p-6" id="about">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl w-full">
 
         <div class="space-y-8">
             <div class="space-y-4">
-                <h2 class="text-xl font-medium text-indigo-400 tracking-wide uppercase">Sobre Mim
+                <h2 class="text-xl font-medium text-indigo-400 tracking-wide uppercase ">Sobre Mim
                 </h2>
                 <h1 class="text-5xl md:text-6xl font-bold leading-tight">
                     Olá, eu sou o<br>
@@ -12,8 +12,9 @@
                     </span>
                 </h1>
                 <p class="text-lg text-slate-300 leading-relaxed max-w-lg">
-                    Sou um desenvolvedor apaixonado por criar experiências web modernas e performáticas.
-                    Transformo ideias em código limpo e escalável.
+                    Sou desenvolvedor e gosto de transformar ideias em produtos reais.
+                    Crio aplicações web e mobile, além de automações e sistemas que
+                    combinam boa experiência de usuário com código organizado e escalável.
                 </p>
             </div>
 
@@ -90,20 +91,23 @@
                 </div>
             </div>
 
-            <div class="pt-4 space-x-4">
-                <button
-                    class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    Baixar CV
-                </button>
-                <button
-                    class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="pt-4 space-x-4 flex justify-center md:justify-start">
+                <a href="https://drive.google.com/file/d/1HavXqqZJxJd056Nbps3MGxVthYv9reQ_/view?usp=sharing"
+                    target="_blank">
+                    <button
+                        class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer duration-300 transform hover:-translate-y-1">
+                        Currículo
+                    </button>
+                </a>
+                <button (click)="openContactModal()"
+                    class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer duration-300 transform hover:-translate-y-1">
                     Contato
                 </button>
             </div>
         </div>
 
 
-        <div class="relative group flex justify-center md:justify-end">
+        <div class="relative group hidden md:flex justify-center md:justify-end">
             <div
                 class="absolute -inset-4 bg-linear-to-r from-indigo-500 to-purple-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500">
             </div>
@@ -116,6 +120,44 @@
         </div>
     </div>
 
+    <div *ngIf="isContactModalOpen"
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
 
+        <div
+            class="relative bg-slate-900 border border-slate-700 rounded-2xl p-8 w-full max-w-md shadow-2xl animate-fade-in">
+
+            <button (click)="closeContactModal()"
+                class="absolute top-4 right-4 text-slate-400 hover:text-white transition">
+                ✕
+            </button>
+
+            <h3 class="text-2xl font-bold text-white mb-6 text-center">
+                Contato
+            </h3>
+
+            <div class="space-y-4 text-center">
+
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-4 hover:bg-slate-700 transition">
+
+                    <p class="text-sm text-slate-400">Email</p>
+                    <p class="text-lg text-indigo-400 font-medium">
+                        marcelo_araujo28@hotmail.com
+                    </p>
+
+                </div>
+
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-4 hover:bg-slate-700 transition">
+
+                    <p class="text-sm text-slate-400">WhatsApp</p>
+                    <p class="text-lg text-indigo-400 font-medium">
+                        (16) 99157-3748
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 
 </section>
