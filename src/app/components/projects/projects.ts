@@ -20,6 +20,22 @@ export class Projects {
   private readonly baseProjects: Project[] = [
     {
       id: 1,
+      image: '/placar (1).webp',
+      title: 'Placar Final',
+      description:
+        'Plataforma de acompanhamento de futebol com aplicativo mobile, site institucional e API própria.',
+      link: '#',
+    },
+    {
+      id: 2,
+      image: '/salmos (1).webp',
+      title: 'SalmosOn',
+      description:
+        'Aplicativo mobile para leitura e acompanhamento de salmos, desenvolvido com React Native.',
+      link: '#',
+    },
+    {
+      id: 3,
       image: '/botcover.webp',
       title: 'Albion Event Bot',
       description:
@@ -27,14 +43,14 @@ export class Projects {
       link: '#',
     },
     {
-      id: 2,
+      id: 4,
       image: '/sitecover.webp',
       title: 'Albion Event Bot - SITE',
       description: 'Website desenvolvido para apresentar o Albion Event Bot.',
       link: '#',
     },
     {
-      id: 3,
+      id: 5,
       image: '/finacontrolcover.webp',
       title: 'FinaControl',
       description:

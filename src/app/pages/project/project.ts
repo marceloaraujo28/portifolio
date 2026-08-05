@@ -9,8 +9,9 @@ interface ProjectData {
   images: string[];
   techStack: { name: string; icon: string }[];
   buttonName: string;
-  buttonImg: string
+  buttonImg: string;
   githubLink: string;
+  websiteLink?: string;
 }
 
 @Component({
@@ -28,6 +29,73 @@ export class Project implements OnInit {
   projectsData: ProjectData[] = [
     {
       id: '1',
+      title: 'Placar Final',
+      description: `Desenvolvi o Placar Final, uma plataforma de acompanhamento de futebol composta por site, aplicativo mobile e API própria. O front-end web foi construído com Astro e renderização no servidor (SSR), enquanto o aplicativo foi desenvolvido em React Native com Expo, Expo Router e TypeScript.
+
+      A API foi criada em Node.js, TypeScript e Fastify, atuando como uma camada intermediária entre os clientes e a API de dados esportivos. Essa arquitetura centraliza regras de negócio, protege as chaves externas e otimiza as consultas com cache em Redis. Dados como favoritos, instalações do aplicativo, preferências de notificações e conteúdos do blog são armazenados em PostgreSQL com Prisma ORM.
+
+      Para as notificações em tempo real, implementei um serviço worker separado da API principal. Ele monitora partidas relacionadas aos times e campeonatos seguidos pelos usuários, compara o estado atual de cada jogo com snapshots salvos e identifica eventos relevantes, como início de partida, gols e encerramento.
+
+      Os eventos são adicionados a filas BullMQ persistidas no Redis e processados com concorrência controlada pelo Expo Push Service. A solução inclui tentativas automáticas, backoff exponencial e deduplicação por evento para evitar notificações repetidas. O monitoramento usa frequência adaptativa: a cada minuto para jogos ao vivo ou próximos do início e intervalos maiores quando não há partidas relevantes.
+
+      O back-end foi conteinerizado com Docker e publicado em uma VPS. O Coolify simplifica o deploy, o gerenciamento das variáveis de ambiente e a operação dos serviços.`,
+      images: [
+        '/placar (1).webp',
+        '/placar (2).webp',
+        '/placar (3).webp',
+        '/placar (4).webp',
+        '/placar (5).webp',
+        '/placarsite.png',
+      ],
+      techStack: [
+        { name: 'React Native', icon: 'https://cdn.simpleicons.org/react' },
+        { name: 'Expo', icon: 'https://cdn.simpleicons.org/expo' },
+        { name: 'Expo Router', icon: 'https://cdn.simpleicons.org/expo' },
+        { name: 'TypeScript', icon: 'https://cdn.simpleicons.org/typescript' },
+        { name: 'Astro', icon: 'https://cdn.simpleicons.org/astro' },
+        { name: 'Node.js', icon: 'https://cdn.simpleicons.org/nodedotjs' },
+        { name: 'Fastify', icon: 'https://cdn.simpleicons.org/fastify' },
+        { name: 'PostgreSQL', icon: 'https://cdn.simpleicons.org/postgresql' },
+        { name: 'Prisma', icon: 'https://cdn.simpleicons.org/prisma' },
+        { name: 'Redis', icon: 'https://cdn.simpleicons.org/redis' },
+        { name: 'BullMQ', icon: 'https://cdn.simpleicons.org/bullmq' },
+        { name: 'Docker', icon: 'https://cdn.simpleicons.org/docker' },
+      ],
+      githubLink:
+        'https://play.google.com/store/apps/details?id=com.marceloaraujo28.placarapp&hl=pt_BR',
+      buttonName: 'Ver na Play Store',
+      buttonImg: 'https://cdn.simpleicons.org/googleplay',
+      websiteLink: 'https://placarfinal.com/',
+    },
+    {
+      id: '2',
+      title: 'SalmosOn',
+      description: `O SalmosOn é um aplicativo mobile desenvolvido para proporcionar uma experiência simples e acolhedora de leitura e acompanhamento de salmos.
+
+      O projeto foi construído com React Native, permitindo uma interface mobile fluida e uma experiência consistente para usuários Android. O foco do desenvolvimento esteve na organização do conteúdo, na facilidade de navegação e em uma apresentação visual pensada para a leitura diária.`,
+      images: [
+        '/salmos (1).webp',
+        '/salmos (2).webp',
+        '/salmos (3).webp',
+        '/salmos (4).webp',
+        '/salmos (5).webp',
+        '/salmos (6).webp',
+        '/salmos (7).webp',
+        '/salmos (8).webp',
+        '/salmos (9).webp',
+        '/salmos (10).webp',
+      ],
+      techStack: [
+        { name: 'React Native', icon: 'https://cdn.simpleicons.org/react' },
+        { name: 'Next.js', icon: 'https://cdn.simpleicons.org/nextdotjs/white' },
+      ],
+      githubLink: 'https://play.google.com/store/apps/details?id=salmoson.app&hl=pt_BR',
+      buttonName: 'Ver na Play Store',
+      buttonImg: 'https://cdn.simpleicons.org/googleplay',
+      websiteLink: 'https://salmoson.com.br/',
+    },
+    {
+      id: '3',
       title: 'Albion Event Bot',
       description: `O Albion Event Bot é um bot para Discord desenvolvido para auxiliar guildas e jogadores do Albion Online na organização de eventos e no gerenciamento de recompensas. Trata-se de um produto em produção, utilizado por mais de 200 servidores, com foco em automação, precisão e escalabilidade.
 
@@ -58,7 +126,7 @@ export class Project implements OnInit {
         '/bot5.png',
         '/bot6.png',
         '/bot7.png',
-        '/bot8.png'
+        '/bot8.png',
       ],
       techStack: [
         { name: 'Typescript', icon: 'https://cdn.simpleicons.org/typescript' },
@@ -67,11 +135,11 @@ export class Project implements OnInit {
       ],
 
       githubLink: 'https://discord.gg/AjGZbc5b2s',
-      buttonName: "Acessar o Bot",
-      buttonImg: "https://cdn.simpleicons.org/discord"
+      buttonName: 'Acessar o Bot',
+      buttonImg: 'https://cdn.simpleicons.org/discord',
     },
     {
-      id: '2',
+      id: '4',
       title: 'Albion Event Bot - SITE',
       description: `O site do Albion Event Bot foi desenvolvido como a plataforma oficial de apresentação e suporte do bot para Discord, com foco em clareza, usabilidade e boa experiência do usuário. Ele centraliza todas as informações necessárias para que novos usuários entendam rapidamente o funcionamento do bot e consigam utilizá-lo sem dificuldades. O site também possui internacionalização de acordo com o idioma do navegador do usuário.
 
@@ -97,11 +165,11 @@ export class Project implements OnInit {
         { name: 'TypeScript', icon: 'https://cdn.simpleicons.org/typescript' },
       ],
       githubLink: 'https://github.com/marceloaraujo28/bot-site',
-      buttonName: "Ver no GitHub",
-      buttonImg: "https://cdn.simpleicons.org/github"
+      buttonName: 'Ver no GitHub',
+      buttonImg: 'https://cdn.simpleicons.org/github',
     },
     {
-      id: '3',
+      id: '5',
       title: 'FinaControl',
       description: `O FinaControl é um aplicativo de gestão de finanças pessoais desenvolvido como projeto pessoal, com foco em simplicidade, clareza e experiência do usuário. A aplicação permite acompanhar despesas, planejar o orçamento mensal e visualizar os gastos de forma prática e intuitiva, tornando o controle financeiro mais acessível no dia a dia.
 
@@ -142,12 +210,12 @@ export class Project implements OnInit {
         { name: 'Supabase', icon: 'https://cdn.simpleicons.org/supabase' },
       ],
       githubLink: 'https://github.com/marceloaraujo28/finance-app',
-      buttonName: "Ver no GitHub",
-      buttonImg: "https://cdn.simpleicons.org/github"
+      buttonName: 'Ver no GitHub',
+      buttonImg: 'https://cdn.simpleicons.org/github',
     },
   ];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {

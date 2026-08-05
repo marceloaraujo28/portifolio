@@ -101,6 +101,25 @@
                             d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </a>
+
+                <a *ngIf="project.websiteLink" [href]="project.websiteLink" target="_blank" class="flex items-center gap-2 justify-center w-full px-6 py-4 bg-slate-700 hover:bg-slate-600
+                 text-white font-semibold rounded-xl border border-slate-600 transition-all duration-300 transform hover:-translate-y-1 group">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0-18c2.1 2.4 3.2 5.4 3.2 9s-1.1 6.6-3.2 9c-2.1-2.4-3.2-5.4-3.2-9S9.9 5.4 12 3ZM3.6 9h16.8M3.6 15h16.8" />
+                    </svg>
+
+                    Visitar site oficial
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4 ml-2 opacity-70 group-hover:translate-x-1 transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
             </div>
 
         </div>
